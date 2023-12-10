@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intel idj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="flex">
+    <button id="copyButton1">copy 1</button> <span id="copyResult1"></span>
+    <button id="copyButton2">copy 2</button> <span id="copyResult2"></span>
+    <button id="copyButton3">copy 3</button> <span id="copyResult3"></span>
+    <button id="copyButton4">copy 4</button> <span id="copyResult4"></span>
+    <button id="copyButton5">copy 5</button> <span id="copyResult5"></span>
+    <button id="copyButton6">copy 6</button> <span id="copyResult6"></span>
+    <button id="copyButton7">copy 7</button> <span id="copyResult7"></span>
+    <button id="copyButton8">copy 8</button> <span id="copyResult8"></span>
+    <button id="copyButton9">copy 9</button> <span id="copyResult9"></span>
+    <button id="copyButton10">copy 10</button> <span id="copyResult10"></span>
+</div>
+<a href="page.html"> click </a>
+
+<h4>lab 1</h4>
+<pre id="textToCopy1">
+    import java.util.Scanner;
+    
+    class Fact {
+        public static void main(String[] args) {
+            int n, fac = 1;
+            System.out.print("Enter number: ");
+            Scanner r = new Scanner(System.in);
+            n = r.nextInt();
+                
+            for (int i = 1; i <= n; i++) {
+                fac = fac * i;
+            }
+                
+            System.out.println("Factorial of the number is: " + fac);
+        }
+    }
+           
+    </pre>
+    <h4>lab 2</h4>
+    <pre id="textToCopy2">
+    public class PrimeDemo2 { 
+        static void checkPrime(int n) { 
+            int i, flag = 0; 
+            if (n == 0 || n == 1) { 
+                System.out.println(n + " is not a prime number"); 
+            } else { 
+                for (i = 2; i <= n / 2; i++) { 
+                    if (n % i == 0) { 
+                        System.out.println(n + " is not a prime number"); 
+                        flag = 1; 
+                        break; 
+                    } 
+                } 
+                if (flag == 0) { 
+                        System.out.println(n + " is a prime number"); 
+                } 
+            } 
+        } 
+            
+        public static void main(String args[]) { 
+            checkPrime(1); 
+            checkPrime(4); 
+            checkPrime(17); 
+            checkPrime(20); 
+        } 
+    }
+        
+    </pre>
+    <h4>lab 3</h4>
+    <pre id="textToCopy3">
+    import java.util.Scanner;
+    public class SortDemo {
+        public static void main(String[] args) {
+            int n;
+            Scanner sc = new Scanner(System.in);
+            try {
+                System.out.println("Enter the number of elements: ");
+                n = sc.nextInt();
+                int[] arr = new int[10];
+                System.out.println("Please Enter " + n + " Number");
+                for (int i = 0; i < n; i++) {
+                    arr[i] = sc.nextInt();
+                }
+                System.out.println("After Sorting");
+                System.out.println("Ascending order");
+                for (int i = 0; i < n; i++) {
+                    for (int j = i + 1; j < n; j++) {
+                        int tmp = 0;
+                        if (arr[i] > arr[j]) {
+                            tmp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = tmp;
+                        }
+                    }
+                    System.out.println(" " + arr[i]);
+                }
+                System.out.println("\n \n Descending order \n");
+                for (int i = n - 1; i >= 0; i--) {
+                    System.out.println(" " + arr[i]);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Enter only integers" + e);
+            } catch (Exception exception) {
+                System.out.println("Error occurred " + exception);
+            }
+        }
+    }
+    
+    </pre>
+    <h4>lab 4</h4>
+    <pre id="textToCopy4">
+    import java.io.*;
+    public class RhombusDemo {
+        public static void main(String args[]) throws IOException {
+            int i, j, limit;
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter the limit : ");
+            limit = Integer.parseInt(br.readLine());
+            for (i = 1; i <= limit; i++) {
+                for (j = limit - i; j > 0; j--)
+                    System.out.print(" ");
+                for (j = 1; j <= 2 * i - 1; j++)
+                    System.out.print("*");
+                System.out.println();
+            }
+            for (i = limit - 1; i >= 1; i--) {
+                for (j = 1; j <= limit - i; j++)
+                    System.out.print(" ");
+                for (j = 1; j <= 2 * i - 1; j++)
+                    System.out.print("*");
+                System.out.println();
+            }
+        }
+    }
+    
+    </pre>
+    <h4>lab 5</h4>
+    <pre id="textToCopy5">
+    package com.company;
+    
+    class StringOperation {
+        public static void main(String args[]) {
+            String s1 = "Hello";
+            String s2 = "World";
+    
+            System.out.println("The strings are " + s1 + " and " + s2);
+            int len1 = s1.length();
+            int len2 = s2.length();
+            System.out.println("The length of " + s1 + " is: " + len1);
+            System.out.println("The length of " + s2 + " is: " + len2);
+            System.out.println("The concatenation of two strings " + s1.concat(s2));
+            System.out.println("First character of " + s1 + " is= " + s1.charAt(0));
+            System.out.println("The upper case of " + s1 + " is= " + s1.toUpperCase());
+            System.out.println("The lower case of " + s2 + " is= " + s2.toLowerCase());
+            System.out.println("The letter 'e' occurs at position " + s1.indexOf("e") + " in " + s1);
+            System.out.println("Substring of " + s1 + " starting from index 2 and ending at 4 is " + s1.substring(2, 4));
+            System.out.println("Replacing 'e' with 'o' in " + s1 + " is = " + s1.replace('e', 'o'));
+            
+            boolean check = s1.equals(s2);
+            if (check == false) {
+                System.out.println("" + s1 + " and " + s2 + " are not the same ");
+            } else {
+                System.out.println("" + s1 + " and " + s2 + " are the same ");
+            }
+        }
+    }
+     
+    </pre>
+    <h4>lab 6</h4>
+    <pre id="textToCopy6">
+    abstract class A {
+        abstract void call();
+    }
+    
+    class B extends A {
+        public void call() {
+            System.out.println("call me from B");
+        }
+    
+        public static void main(String args[]) {
+            B b = new B();
+            b.call();
+        }
+    }
+    
+    </pre>
+    <h4>lab 7</h4>
+    <pre id="textToCopy7">
+    package com.company;
+    
+    import java.io.*;
+    
+    class Area {
+        public static double circleArea(double r) {
+            return Math.PI * r * r;
+        }
+    
+        public static double squareArea(double side) {
+            return side * side;
+        }
+    
+        public static double rectArea(double width, double height) {
+            return width * height;
+        }
+    
+        public static double triArea(double base, double height) {
+            return 0.5 * base * height;
+        }
+    
+        public static String readLine() {
+            String input = " ";
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                input = in.readLine();
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+            }
+            return input;
+        }
+    
+        public static void main(String[] args) {
+            System.out.println("Enter the radius: ");
+            Double radius = Double.parseDouble(readLine());
+            System.out.println("Area of Circle = " + circleArea(radius));
+    
+            System.out.println("Enter the side: ");
+            Double side = Double.parseDouble(readLine());
+            System.out.println("Area of Square = " + squareArea(side));
+    
+            System.out.println("Enter the Width: ");
+            Double width = Double.parseDouble(readLine());
+            System.out.println("Enter the height: ");
+            Double height = Double.parseDouble(readLine());
+            System.out.println("Area of Rectangle = " + rectArea(width, height));
+    
+            System.out.println("Enter the base: ");
+            Double base = Double.parseDouble(readLine());
+            System.out.println("Enter the height: ");
+            Double height1 = Double.parseDouble(readLine());
+            System.out.println("Area of Triangle = " + triArea(base, height1));
+        }
+    }
+    
+    </pre>
+    <h4>lab 8</h4>
+    <pre id="textToCopy8">
+    public class Box {
+        int length, breadth, height;
+    
+        Box() {
+            length = breadth = height = 2;
+            System.out.println("Initialized with default constructor");
+        }
+    
+        Box(int l, int b) {
+            length = l;
+            breadth = b;
+            height = 2;
+            System.out.println("Initialized with parameterized constructor having 2 params");
+        }
+    
+        Box(int l, int b, int h) {
+            length = l;
+            breadth = b;
+            height = h;
+            System.out.println("Initialized with parameterized constructor having 3 params");
+        }
+    
+        public int getVolume() {
+            return length * breadth * height;
+        }
+    
+        public static void main(String ars[]) {
+            Box box1 = new Box();
+            System.out.println("The volume of Box1 is : " + box1.getVolume());
+    
+            Box box2 = new Box(10, 20);
+            System.out.println("The volume of Box2 is : " + box2.getVolume());
+    
+            Box box3 = new Box(10, 20, 30);
+            System.out.println("The volume of Box3 is : " + box3.getVolume());
+        }
+    }
+    
+    </pre>
+    <h4>lab 9</h4>
+    <pre id="textToCopy9">
+    package com.company;
+    
+    abstract class Department {
+        double salary, bonus, totalSalary;
+    
+        public abstract void calBonus(double salary);
+    
+        public void displayTotalSalary(String dept) {
+            System.out.println(dept + "\t" + salary + "\t\t" + bonus + "\t" + totalSalary);
+        }
+    }
+    
+    class Accounts extends Department {
+        public void calBonus(double sal) {
+            salary = sal;
+            bonus = sal * 0.2;
+            totalSalary = salary + bonus;
+        }
+    }
+    
+    class Sales extends Department {
+        public void calBonus(double sal) {
+            salary = sal;
+            bonus = sal * 0.3;
+            totalSalary = salary + bonus;
+        }
+    }
+    
+    public class BonusCalculate {
+        public static void main(String ars[]) {
+            Department acc = new Accounts();
+            Department sales = new Sales();
+    
+            acc.calBonus(10000);
+            sales.calBonus(20000);
+    
+            System.out.println("Department \t Basic Salary \t Bonus \t Total Salary");
+            System.out.println(" ");
+            
+            acc.displayTotalSalary("Accounts Dept");
+            sales.displayTotalSalary("Sales Dept");
+            
+            System.out.println(" ");
+        }
+    }
+    
+    </pre>
+    <h4>lab 10</h4>
+    <pre id="textToCopy10">
+    package com.company;
+    
+    class A extends Thread {
+        public void run() {
+            System.out.println("Thread A started ");
+            for (int i = 1; i < 5; i++)
+                System.out.println("Thread A :i=" + i);
+            System.out.println("Exit from Thread A ");
+        }
+    }
+    
+    class B extends Thread {
+        public void run() {
+            System.out.println("Thread B started ");
+            for (int i = 1; i < 5; i++)
+                System.out.println("Thread B :i=" + i);
+            System.out.println("Exit from Thread B ");
+        }
+    }
+    
+    class C extends Thread {
+        public void run() {
+            System.out.println("Thread C started ");
+            for (int i = 1; i < 5; i++)
+                System.out.println("Thread C :i=" + i);
+            System.out.println("Exit from Thread C ");
+        }
+    }
+    
+    class ThreadPriority {
+        public static void main(String[] args) {
+            A threadA = new A();
+            B threadB = new B();
+            C threadC = new C();
+    
+            threadA.setPriority(Thread.NORM_PRIORITY);
+            threadB.setPriority(Thread.MAX_PRIORITY);
+            threadC.setPriority(Thread.MIN_PRIORITY);
+    
+            System.out.println("Start Thread A");
+            threadA.start();
+    
+            System.out.println("Start Thread B");
+            threadB.start();
+    
+            System.out.println("Start Thread C");
+            threadC.start();
+    
+            System.out.println("End of main Thread ");
+        }
+    }
+    
+    </pre>
+<script src="script.js"></script>
+</body>
+</html>
